@@ -1,0 +1,37 @@
+<ion-menu [content]="content">
+
+<ion-header class="login-bg"																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									>
+	<div style="width: 100%">
+	  <div class="container-logo">
+	    <img src="assets/img/logo.png"/>
+	  </div>
+	  <p style="margin-left: 20px; color: white">{{getLogin()}}</p>
+	  
+	</div>
+</ion-header>																																										
+
+<ion-content class="has-footer">
+    <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+</ion-content>
+
+<ion-footer align-title="left" class="bar-assertive">
+    <button menuClose ion-item>
+      <ion-icon name="information-circle" item-left></ion-icon>
+      About
+    </button>
+    <button menuClose ion-item (click)="logout()">
+      <ion-icon name="exit" item-left></ion-icon>
+      Exit
+    </button>
+</ion-footer>
+
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

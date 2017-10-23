@@ -1,0 +1,23 @@
+spring:
+  active: test
+  profiles: test  
+  datasource:
+    url: jdbc:mysql://localhost:3306/app_dev
+    username: root
+    password: 1234
+    platform: mysql
+    initialize: true
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: validate
+  devtools:
+    remote:
+      secret: 1234
+app:
+  secret: Mk"2JG6qf3gjJt6W
+  token-validity-in-seconds: 2592000
+security:
+  ignored:
+    - none

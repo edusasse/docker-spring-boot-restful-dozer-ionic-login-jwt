@@ -1,0 +1,15 @@
+{
+  "name": "docker-spring-boot-restful-dozer-ionic-login-jwt",
+  "app_id": "86217fec",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "type": "ionic-angular",
+  "integrations": {}
+}

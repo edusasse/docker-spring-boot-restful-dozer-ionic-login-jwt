@@ -1,0 +1,59 @@
+<ion-header>
+   <ion-navbar color="primary" align-title="center">
+    <ion-title class="title">
+       Inscrever-se
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="login-bg" padding>
+  <form [formGroup]="myForm" (ngSubmit)="signup()" novalidate>
+    <ion-list>
+      <ion-item class="login-item">
+        <ion-label floating>Nome</ion-label>
+        <ion-input type="text" 
+          id="primeiroNome" 
+          formControlName="primeiroNome"
+          autocapitalize="off"
+          [(ngModel)]="usuarioDTO.pessoa.identity.primeiroNome" 
+        ></ion-input>
+      </ion-item>
+      <p *ngIf="!isValid('primeiroNome')" danger padding-left>Informe um nome válido</p>
+
+      <ion-item class="login-item">
+        <ion-label floating>Sobrenome</ion-label>
+        <ion-input type="text" 
+          id="segundoNome" 
+          formControlName="segundoNome"
+          autocapitalize="off"
+          [(ngModel)]="usuarioDTO.pessoa.identity.segundoNome" 
+        ></ion-input>
+      </ion-item>
+      <p *ngIf="!isValid('segundoNome')" danger padding-left>Informe um sobrenome válido</p>
+
+      <ion-item class="login-item">
+        <ion-label floating>Usuário</ion-label>
+        <ion-input type="text" 
+          id="username"
+          formControlName="apelido"
+          [(ngModel)]="usuarioDTO.apelido"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item class="login-item">
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" 
+          id="password" 
+          formControlName="senha"
+          [(ngModel)]="usuarioDTO.senha"
+        ></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="!myForm.valid">Cadastrar</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

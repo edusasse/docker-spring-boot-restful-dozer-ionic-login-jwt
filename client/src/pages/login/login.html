@@ -1,0 +1,38 @@
+<ion-content class="login-bg" padding> 	
+  <form #form="ngForm" (ngSubmit)="login(form.value)" novalidate>
+    <ion-list style="background-color: none">
+      <ion-item class="login-item">
+      	<div style="width: 100%">
+	      <div class="container-logo">
+	        <img src="assets/img/logo.png"/>
+	      </div>
+	    </div>
+      </ion-item>
+      <ion-item class="login-item">
+        <ion-label floating>Usuário</ion-label>
+        <ion-input type="text" name="apelido" ngModel required #apelido="ngModel"
+                   [class.invalid]="apelido.errors && apelido.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message login-item" *ngIf="apelido.errors?.required && apelido.dirty">
+        Informe o usuário
+      </ion-item>
+
+      <ion-item class="login-item">
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" name="senha" ngModel required #senha="ngModel"
+                   [class.invalid]="senha.errors && senha.dirty"></ion-input>
+      </ion-item>
+      <ion-item class="error-message login-item" *ngIf="senha.errors?.required && senha.dirty">
+        Informe a senha
+      </ion-item>
+
+      <div padding>
+        <button ion-button color="primary" block type="submit" [disabled]="!form.valid">Acessar</button>
+      </div>
+
+      <div padding>
+        <button ion-button color="secondary" block type="button" (click)="signup()">Inscrever-se</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,16 @@
+node_modules/
+www/build/
+platforms/
+plugins/
+.DS_Store
+/.project
+www
+.tmp
+.sass-cache
+coverage
+*.swp
+*.swo
+*.log
+.project
+.classpath
+.settings

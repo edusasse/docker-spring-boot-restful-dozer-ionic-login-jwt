@@ -1,0 +1,6 @@
+app:
+  secret: Mk"2JG6qf3gjJt6W
+  token-validity-in-seconds: 2592000
+security:
+  ignored:
+    - none
